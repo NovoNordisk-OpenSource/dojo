@@ -26,7 +26,7 @@ Once completed the participants will have gained a basic understanding of the fo
 ### 1. Create a kata directory
 First we setup a directory for our exercise files. It's pretty straight forward:
 
-```
+```bash
 mkdir kata4
 cd kata4
 ```

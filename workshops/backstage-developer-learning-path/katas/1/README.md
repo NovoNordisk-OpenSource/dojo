@@ -14,20 +14,20 @@ These instructions will help you prepare for the kata and ensure that your train
 * [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) (windows only)
 
 ## Exercise
-This instructional exercise is meticulously designed to serve as a comprehensive guide, taking you step-by-step through the intricate process of installing and setting up [Backstage](https://github.com/backstage/backstage/) within the confines of a localized environment. Its purpose is not solely limited to installation; it also aims to provide a detailed walkthrough that acquaints you with the nuanced functionalities and intricacies of the solution, thereby enabling you to gain a comprehensive understanding of its multifaceted capabilities.
+This instructional exercise is meticulously designed to serve as a comprehensive guide, taking you step-by-step through the intricate process of installing and setting up Backstage within the confines of a localized environment. Its purpose is not solely limited to installation; it also aims to provide a detailed walkthrough that acquaints you with the nuanced functionalities and intricacies of the solution, thereby enabling you to gain a comprehensive understanding of its multifaceted capabilities.
 
-Moreover, this exercise doesn't merely stop at installation and CLI usage; it also extends to hands-on demonstrations that meticulously illustrate the foundational aspects of navigating within the intricate Backstage platform. By offering practical demonstrations and insights into basic features, this exercise aims to foster a profound understanding, thereby laying the groundwork for subsequent explorations and expansions into the extensive capabilities and versatile plugins that [Backstage](https://github.com/backstage/backstage/) encompasses. This initial foray into [Backstage](https://github.com/backstage/backstage/) serves as a pivotal stepping stone, providing a robust foundational understanding that is essential for harnessing the full spectrum of its capabilities and the multitude of possibilities it offers through its diverse range of plugins.
+Moreover, this exercise doesn't merely stop at installation and CLI usage; it also extends to hands-on demonstrations that meticulously illustrate the foundational aspects of navigating within the intricate Backstage platform. By offering practical demonstrations and insights into basic features, this exercise aims to foster a profound understanding, thereby laying the groundwork for subsequent explorations and expansions into the extensive capabilities and versatile plugins that Backstage encompasses. This initial foray into Backstage serves as a pivotal stepping stone, providing a robust foundational understanding that is essential for harnessing the full spectrum of its capabilities and the multitude of possibilities it offers through its diverse range of plugins.
 
 ### 1. Create a kata directory
 First we setup a directory for our exercise files. It's pretty straight forward:
 
-```
+```bash
 mkdir kata1
 cd kata1
 ```
 
 ### 2. Install Backstage via NPM
-Next we start diving into the [Backstage](https://github.com/backstage/backstage/) ecosystem by installing [Backstage](https://github.com/backstage/backstage/) using `npx` and `yarn`. Once `npx` completes the scaffolding process for your new developer portal, navigate into the freshly generated app directory. From here, fire up the engine of your application using the `yarn start` command to initiate and configure the required dependencies:
+Next we start diving into the Backstage ecosystem by installing Backstage using `npx` and `yarn`. Once `npx` completes the scaffolding process for your new developer portal, navigate into the freshly generated app directory. From here, fire up the engine of your application using the `yarn start` command to initiate and configure the required dependencies:
 
 ```bash
 npx @backstage/create-app@latest
@@ -53,7 +53,7 @@ The test command will trigger a suite of pre-configured tests, examining various
 You can find more information on how to debug Backstage [here](https://backstage.io/docs/local-dev/debugging)
 
 ### 4. Configure persistant storage
-[Backstage](https://github.com/backstage/backstage/) uses an `:inmemory:` provider for backend persistancy out-of-the box. While this is great for getting us started it becomes somewhat cumbersome to work with if the application resets itself all the time. To fix this issue we will swap from [`SQLite`](https://www.sqlite.org/index.html) to [`postgres`](https://www.postgresql.org/) by editing the `backend.database` configuration element in the `app-config.yaml` file that can be found in the root of the folder containing the scaffolded assets generated via the Backstage CLI.
+Backstage uses an `:inmemory:` provider for backend persistancy out-of-the box. While this is great for getting us started it becomes somewhat cumbersome to work with if the application resets itself all the time. To fix this issue we will swap from [`SQLite`](https://www.sqlite.org/index.html) to [`postgres`](https://www.postgresql.org/) by editing the `backend.database` configuration element in the `app-config.yaml` file that can be found in the root of the folder containing the scaffolded assets generated via the Backstage CLI.
 
 Once we have located the configuration element in `app-config.yaml`, we can edit it from this:
 
@@ -88,14 +88,14 @@ docker run --name my_postgres -e POSTGRES_PASSWORD=supersecretpassword -e POSTGR
 ```
 
 ### 6. Restart Backstage
-Give the `postgres` database a minute to get ready while you terminate the current [Backstage](https://github.com/backstage/backstage/) instance and allow the database services to come online inside our `my_postgres` container. Once the shell running the `postgres` workload prints messges indicating that the database is ready for external connections restart [Backstage](https://github.com/backstage/backstage/) using the `start` command as follows:
+Give the `postgres` database a minute to get ready while you terminate the current Backstage instance and allow the database services to come online inside our `my_postgres` container. Once the shell running the `postgres` workload prints messges indicating that the database is ready for external connections restart Backstage using the `start` command as follows:
 
 ```bash
 yarn start
 ```
 
 ### 7. Verify configuration via Backstage Dashboard
-Once the reconfigured [Backstage](https://github.com/backstage/backstage/) process is up and running again, open your web browser and go to http://localhost:3000 to verify that your local Backstage instance is servicing connections. This will take you to the Backstage dashboard displaying various cards such as Catalog, Explore, Create, and more.
+Once the reconfigured Backstage process is up and running again, open your web browser and go to http://localhost:3000 to verify that your local Backstage instance is servicing connections. This will take you to the Backstage dashboard displaying various cards such as Catalog, Explore, Create, and more.
 
 Check the various features are working and that your developer tools (F11) does not report `CSP` or `CORS` errors.
 

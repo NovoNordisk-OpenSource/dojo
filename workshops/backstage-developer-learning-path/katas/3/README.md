@@ -25,7 +25,7 @@ Upon completion the participants will have gained a basic understanding of the f
 ### 1. Create a kata directory
 First we setup a directory for our exercise files. It's pretty straight forward:
 
-```
+```bash
 mkdir kata3
 cd kata3
 ```
