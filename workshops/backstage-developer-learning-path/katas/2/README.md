@@ -8,23 +8,27 @@ These instructions will help you prepare for the kata and ensure that your train
 
 ### Prerequisites
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-* [NodeJS](https://nodejs.org/) 
+* [NodeJS](https://nodejs.org/)
 * [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * [Docker Desktop](https://docs.docker.com/desktop/)
 * [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) (windows only)
 
 ## Exercise
-TODO
+The objective of this exercise is to guide developers through the process of setting up and configuring [Backstage](https://github.com/backstage/backstage/) TechDocs plugin to document a sample project. It will built on the previous exercise to extend our [Backstage](https://github.com/backstage/backstage/) configuration with the aim of exploring the different configuration options available, such as specifying documentation repositories, markdown rendering settings, and more.
 
-### X. TODO
-TODO:
+Once completed the participants will have gained a basic understanding of the folllowing aspects of the `TechDocs`:
 
-```bash
-TODO
+* TechDocs configuration (mkdocs & plugin)
+* TechDocs assets
+* TechDocs upload and verification in [Backstage](https://github.com/backstage/backstage/) GUI 
+
+### 1. Create a kata directory
+First we setup a directory for our exercise files. It's pretty straight forward:
+
 ```
-
-***Note*** <br/>
-TODO.
+mkdir kata2
+cd kata2
+```
 
 ## Want to help make our training material better?
  * Want to **log an issue** or **request a new kata**? Feel free to visit our [GitHub site](https://github.com/NovoNordisk-OpenSource/dojo/issues).

@@ -8,23 +8,28 @@ These instructions will help you prepare for the kata and ensure that your train
 
 ### Prerequisites
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-* [NodeJS](https://nodejs.org/) 
+* [NodeJS](https://nodejs.org/)
 * [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * [Docker Desktop](https://docs.docker.com/desktop/)
 * [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) (windows only)
 
 ## Exercise
-TODO
+In this exercise you are tasked with setting up a new `software template` in [Backstage](https://github.com/backstage/backstage/) for a specific type of service or application used within our organization. The goal is to create a template that can be reused to generate similar services or applications easily.
 
-### X. TODO
-TODO:
+Upon completion the participants will have gained a basic understanding of the folllowing aspects of the `software template`:
 
-```bash
-TODO
+* Identifing requirements
+* Creating templates
+* Parameterization & customization
+
+
+### 1. Create a kata directory
+First we setup a directory for our exercise files. It's pretty straight forward:
+
 ```
-
-***Note*** <br/>
-TODO.
+mkdir kata3
+cd kata3
+```
 
 ## Want to help make our training material better?
  * Want to **log an issue** or **request a new kata**? Feel free to visit our [GitHub site](https://github.com/NovoNordisk-OpenSource/dojo/issues).

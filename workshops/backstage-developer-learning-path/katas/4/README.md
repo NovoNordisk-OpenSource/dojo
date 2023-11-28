@@ -8,23 +8,29 @@ These instructions will help you prepare for the kata and ensure that your train
 
 ### Prerequisites
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-* [NodeJS](https://nodejs.org/) 
+* [NodeJS](https://nodejs.org/)
 * [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * [Docker Desktop](https://docs.docker.com/desktop/)
 * [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) (windows only)
 
 ## Exercise
-TODO
+This exercise is designed to help developers gain familiarity with the `software catalog` in [Backstage](https://github.com/backstage/backstage/) and will build on the previous exercises to help deepen their understanding of how to manage and utilize this key feature. As this exercise will only cover the basics, participants are encouraged to extend on the subject by reading the upstream documentation [here](https://backstage.io/docs/features/software-catalog/).
 
-### X. TODO
-TODO:
+Once completed the participants will have gained a basic understanding of the folllowing aspects of the `software catalog`:
 
-```bash
-TODO
+* Define and configure software components within the catalog.
+* Implement metadata, such as labels, descriptions, and versions, for software entities.
+* Organize and categorize software components effectively within the catalog.
+* Explore the integrations and plugins available within Backstage.io for extending functionality.
+* Utilize GUI features to search, access, and interact with software components in the catalog.
+
+### 1. Create a kata directory
+First we setup a directory for our exercise files. It's pretty straight forward:
+
 ```
-
-***Note*** <br/>
-TODO.
+mkdir kata4
+cd kata4
+```
 
 ## Want to help make our training material better?
  * Want to **log an issue** or **request a new kata**? Feel free to visit our [GitHub site](https://github.com/NovoNordisk-OpenSource/dojo/issues).
