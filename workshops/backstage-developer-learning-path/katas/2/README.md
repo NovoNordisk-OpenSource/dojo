@@ -10,6 +10,7 @@ These instructions will help you prepare for the kata and ensure that your train
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [NodeJS](https://nodejs.org/) 
 * [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+* [Docker Desktop](https://docs.docker.com/desktop/)
 * [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) (windows only)
 
 ## Exercise
