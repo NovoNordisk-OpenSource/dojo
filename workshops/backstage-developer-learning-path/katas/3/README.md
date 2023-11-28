@@ -18,8 +18,8 @@ In this exercise you are tasked with setting up a new `software template` in [Ba
 
 Upon completion the participants will have gained a basic understanding of the folllowing aspects of the `software template`:
 
-* Identifing requirements.
-* Creating templates.
+* Identifying template requirements.
+* Creating new templates.
 * Parameterization & customization.
 
 ### 1. Create a kata directory
@@ -29,6 +29,18 @@ First we setup a directory for our exercise files. It's pretty straight forward:
 mkdir kata3
 cd kata3
 ```
+
+### 2. Identifying template requirements
+TODO
+
+### 3. Creating new templates
+TODO
+
+### 4. Parameterization
+TODO
+
+### 5. Customization
+TODO
 
 ## Want to help make our training material better?
  * Want to **log an issue** or **request a new kata**? Feel free to visit our [GitHub site](https://github.com/NovoNordisk-OpenSource/dojo/issues).

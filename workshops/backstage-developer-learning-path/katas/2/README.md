@@ -30,5 +30,17 @@ mkdir kata2
 cd kata2
 ```
 
+### 2. TechDocs configuration
+TODO
+
+### 3. TechDocs assets
+TODO
+
+### 4. TechDocs publication
+TODO
+
+### 5. TechDocs versioning
+TODO
+
 ## Want to help make our training material better?
  * Want to **log an issue** or **request a new kata**? Feel free to visit our [GitHub site](https://github.com/NovoNordisk-OpenSource/dojo/issues).

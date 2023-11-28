@@ -18,9 +18,10 @@ This exercise is designed to help developers gain familiarity with the `software
 
 Once completed the participants will have gained a basic understanding of the folllowing aspects of the `software catalog`:
 
-* Organize and categorize software components effectively within the catalog.
-* Define and configure services and components within the catalog.
+* Configuring the software catalog.
+* Registering APIs and components within the software catalog.
 * Implement metadata, such as labels, descriptions, and versions, for software entities.
+* Extending the software catalog with custom software entities.
 
 ### 1. Create a kata directory
 First we setup a directory for our exercise files. It's pretty straight forward:
@@ -29,6 +30,18 @@ First we setup a directory for our exercise files. It's pretty straight forward:
 mkdir kata4
 cd kata4
 ```
+
+### 2. Configuring the software catalog
+TODO
+
+### 3. Registering APIs and components
+TODO
+
+### 4. Working with metadata
+TODO
+
+### 5. Adding custom entities
+TODO
 
 ## Want to help make our training material better?
  * Want to **log an issue** or **request a new kata**? Feel free to visit our [GitHub site](https://github.com/NovoNordisk-OpenSource/dojo/issues).
