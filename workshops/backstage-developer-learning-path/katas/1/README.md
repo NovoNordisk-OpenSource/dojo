@@ -18,8 +18,16 @@ This instructional exercise is meticulously designed to serve as a comprehensive
 
 Moreover, this exercise doesn't merely stop at installation and CLI usage; it also extends to hands-on demonstrations that meticulously illustrate the foundational aspects of navigating within the intricate Backstage platform. By offering practical demonstrations and insights into basic features, this exercise aims to foster a profound understanding, thereby laying the groundwork for subsequent explorations and expansions into the extensive capabilities and versatile plugins that [Backstage](https://github.com/backstage/backstage/) encompasses. This initial foray into [Backstage](https://github.com/backstage/backstage/) serves as a pivotal stepping stone, providing a robust foundational understanding that is essential for harnessing the full spectrum of its capabilities and the multitude of possibilities it offers through its diverse range of plugins.
 
-### 1. Install Backstage
-To get things started, let's dive into the [Backstage](https://github.com/backstage/backstage/) ecosystem by installing [Backstage](https://github.com/backstage/backstage/) using `npx` and `yarn`. Once `npx` completes the scaffolding process for your new developer portal, navigate into the freshly generated app directory. From here, fire up the engine of your application using the `yarn start` command to initiate and configure the required dependencies:
+### 1. Create a kata directory
+First we setup a directory for our exercise files. It's pretty straight forward:
+
+```
+mkdir kata1
+cd kata1
+```
+
+### 2. Install Backstage via NPM
+Next we start diving into the [Backstage](https://github.com/backstage/backstage/) ecosystem by installing [Backstage](https://github.com/backstage/backstage/) using `npx` and `yarn`. Once `npx` completes the scaffolding process for your new developer portal, navigate into the freshly generated app directory. From here, fire up the engine of your application using the `yarn start` command to initiate and configure the required dependencies:
 
 ```bash
 npx @backstage/create-app@latest
@@ -30,7 +38,7 @@ yarn start
 ***Note*** <br/>
 Its worth noting that once Backstage is installed we can access the CLI directly via `yarn`. E.g. `yarn backstage-cli repo test`
 
-### 2. Test installation
+### 3. Test installation
 After completing the scaffolding process, it's essential to ensure the integrity of your setup by running the `test` command. This step confirms not only the successful installation of NPM dependencies but also validates the code generation to guarantee a robust foundation for your project.
 
 Execute the following command to conduct the tests:
@@ -44,7 +52,7 @@ The test command will trigger a suite of pre-configured tests, examining various
 ***Note*** <br/>
 You can find more information on how to debug Backstage [here](https://backstage.io/docs/local-dev/debugging)
 
-### 3. Configure persistant storage
+### 4. Configure persistant storage
 [Backstage](https://github.com/backstage/backstage/) uses an `:inmemory:` provider for backend persistancy out-of-the box. While this is great for getting us started it becomes somewhat cumbersome to work with if the application resets itself all the time. To fix this issue we will swap from [`SQLite`](https://www.sqlite.org/index.html) to [`postgres`](https://www.postgresql.org/) by editing the `backend.database` configuration element in the `app-config.yaml` file that can be found in the root of the folder containing the scaffolded assets generated via the Backstage CLI.
 
 Once we have located the configuration element in `app-config.yaml`, we can edit it from this:
