@@ -18,10 +18,9 @@ In this exercise you are tasked with setting up a new `software template` in [Ba
 
 Upon completion the participants will have gained a basic understanding of the folllowing aspects of the `software template`:
 
-* Identifing requirements
-* Creating templates
-* Parameterization & customization
-
+* Identifing requirements.
+* Creating templates.
+* Parameterization & customization.
 
 ### 1. Create a kata directory
 First we setup a directory for our exercise files. It's pretty straight forward:

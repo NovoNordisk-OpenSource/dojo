@@ -18,9 +18,9 @@ The objective of this exercise is to guide developers through the process of set
 
 Once completed the participants will have gained a basic understanding of the folllowing aspects of the `TechDocs`:
 
-* TechDocs configuration (mkdocs & plugin)
+* TechDocs configuration
 * TechDocs assets
-* TechDocs upload and verification in [Backstage](https://github.com/backstage/backstage/) GUI 
+* TechDocs publication and versioning
 
 ### 1. Create a kata directory
 First we setup a directory for our exercise files. It's pretty straight forward:

@@ -18,11 +18,9 @@ This exercise is designed to help developers gain familiarity with the `software
 
 Once completed the participants will have gained a basic understanding of the folllowing aspects of the `software catalog`:
 
-* Define and configure software components within the catalog.
-* Implement metadata, such as labels, descriptions, and versions, for software entities.
 * Organize and categorize software components effectively within the catalog.
-* Explore the integrations and plugins available within Backstage.io for extending functionality.
-* Utilize GUI features to search, access, and interact with software components in the catalog.
+* Define and configure services and components within the catalog.
+* Implement metadata, such as labels, descriptions, and versions, for software entities.
 
 ### 1. Create a kata directory
 First we setup a directory for our exercise files. It's pretty straight forward:
