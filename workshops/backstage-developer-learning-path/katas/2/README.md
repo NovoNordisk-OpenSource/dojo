@@ -16,11 +16,12 @@ These instructions will help you prepare for the kata and ensure that your train
 ## Exercise
 The objective of this exercise is to guide developers through the process of setting up the `Backstage TechDocs` plugin. It will built on the first `code kata` to extend our `Backstage` application and explore the different `TechDocs` configuration options such as specifying publishing behaviours.
 
-Once completed the participants will have gained a basic understanding of the following aspects of the `TechDocs`:
+Once completed the participants will have gained a basic understanding of the following aspects of `TechDocs`:
 
-* TechDocs configuration (frontend & backend)
-* TechDocs AddOns Framework
-* TechDocs publishing options
+* `TechDocs` configuration (`app package` & `backend package`)
+* `TechDocs` documentation (`catalog-info.yaml` & `mkdocs.yml` )
+* `TechDocs` AddOns Framework
+* `TechDocs` publishing options
 
 ### 1. Create a kata directory
 First we setup a directory for our exercise files. It's pretty straight forward:
@@ -30,8 +31,8 @@ mkdir kata2
 cd kata2
 ```
 
-### 2. Activate TechDocs frontend plugin
-To activate the GUI component of `TechDocs` we need to reconfigure our `packages/app` to include the `TechDocs plugin` assets in the `Backstage` frontend application. This procedure involes interfacing with the `packages/app/src/App.tsx` asset and installing a `@backstage/plugin-techdocs` package via `yarn` by navigating to the `packages/app` directory and executing the following command:
+### 2. Activate TechDocs frontend
+Next we have to activate the GUI component of `TechDocs` by reconfiguring our `packages/app` to include the `TechDocs plugin` assets. This procedure involes interfacing with the `packages/app/src/App.tsx` asset and installing a `@backstage/plugin-techdocs` package via `yarn` by navigating to the `packages/app` directory and executing the following command:
 
 ```bash
 yarn add --cwd packages/app @backstage/plugin-techdocs
@@ -59,7 +60,7 @@ const AppRoutes = () => {
 };
 ```
 
-### 3. Activate backend plugin configuration
+### 3. Activate TechDocs backend
 With the frontend plugin activated we now need to repeat the process for our `packages/backend` assets. This procedure involes creating a new asset at the following location `packages/backend/src/plugins/techdocs.ts` and installing the `@backstage/plugin-techdocs` via `yarn` by navigating to the `packages/backend` directory and executing the following command:
 
 ```bash
@@ -182,10 +183,53 @@ const AppRoutes = () => {
 ***Note*** <br/>
 You can find more information on how to work with `TechDocs AddOns` [here](https://backstage.io/docs/features/techdocs/addons)
 
-### 5. TechDocs publishing
-`TechDocs` uses an internal `Publisher` implementation to manage the publication of documentation, this feature exposes some basic configuration options via `app-config.yaml` that governs the overall code generation, building and publishing behaviour.
+### 5. Understanding the role of mkdocs.yml
+`TechDocs` is founded on the principle of integrating documentation with the code, aka `docs-as-code`, advocating for proximity between the two. Within your Backstage app, a suite of software templates comes preloaded. Each template is equipped with the essentials required to initiate your `TechDocs` platform and commence documentation creation. In the absence of of a software template and/or `catalog-info.yaml` we can manually implement `TechDocs` into any repository by creating a new asset in the root of the target repository named `mkdocs.yml` with the following content:
 
-To get started quickly we will set `techdocs.builder` to `local` so that `TechDocs` is responsible for generating documentation sites on your local machine. If set to `external`, `Backstage` will assume that the sites are being generated in each entity's [CI/CD pipeline](https://backstage.io/docs/features/techdocs/configuring-ci-cd), and are being stored in an external repository ready to be imported into the `Backstage postgres` database.
+```yaml
+site_name: 'example-docs'
+
+nav:
+  - Home: index.md
+
+plugins:
+  - techdocs-core
+```
+
+To better understand how nav elements are resolved take a minute to read the documentation on [docs_dir](https://www.mkdocs.org/user-guide/configuration/#docs_dir) to understand how `mkdocs` resolves `paths` relative to the `docs_dir`, rather then the parent folder of `mkdocs.yml`.
+
+***Note*** <br/>
+Keep in mind that for `Backstage` to be able to access external repositories in [Azure DevOps](https://backstage.io/docs/integrations/azure/locations) and/or [GitHub](https://backstage.io/docs/integrations/github/locations) you will need to configure the respective integations in your `app-config.yaml`.
+
+### 6. Understanding the role of catalog-info.yml
+The `catalog-info.yaml` file in `Backstage` serves as a fundamental descriptor for `components`, `services`, or `plugins` registered in the `software catalog`. This file contains essential metadata defining the `root entity`, such as its name, description, type, owner, tags, and other relevant details. This metadata is crucial for users to discover, search, and comprehend various services, components, or plugins available within Backstage.
+
+Moreover, `catalog-info.yaml` promotes consistency by standardizing metadata structure, facilitating seamless integration and providing a foundation for customization and extensibility according to specific user requirements. Ultimately, it acts as a central repository for crucial information, aiding in the visibility, organization, and management of entities within the Backstage catalog.
+
+For the purpose of this exercise we will only focus on a minimalistic `catalog-info.yaml` to illustrate how `TechDocs` hooks into the overall scheme of `catalog-info.yaml` via `annotations`. In later exercises we will revisit this VERY important asset to explore its many aspects, but for now we will simple create a barebones `catalog-info.yaml` with a simple payload:
+
+```yaml
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: demo-api
+  description: Best API ever
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  lifecycle: production
+  owner: demo-api-team
+  system: demo-api-portal
+```
+
+***Note*** <br/>
+To better understand the different `Backstage annotations` feel free to visit the documentation [here](https://backstage.io/docs/features/software-catalog/well-known-annotations#annotations)
+
+### 7. TechDocs publishing
+`TechDocs` uses an internal `Publisher` implementation to manage the publication of documentation, this feature exposes some basic configuration options via `app-config.yaml` that governs the overall code generation, building and publishing behaviour(s).
+
+To get started quickly we will set `techdocs.builder` in `app-config.yaml` to `local` so that `TechDocs` is responsible for generating documentation sites directly on the `Backstage` local machine. If set to `external`, `Backstage` will assume that the sites are being generated in each entity's [CI/CD pipeline](https://backstage.io/docs/features/techdocs/configuring-ci-cd), and are being stored in an external repository ready to be imported into the `Backstage postgres` database via an appropriate `catalog-info.yaml`. Once configured our `app-config.yaml` should contain a configuraton section named `techdocs` with the following content:
 
 ```yaml
 techdocs:
@@ -196,7 +240,7 @@ techdocs:
 
 The `TechDocs` backend plugin runs a docker container with `mkdocs` installed to generate the frontend of the docs from source files ([markdown](https://www.markdownguide.org/)). If you are deploying `Backstage` using `Docker`, this means your application container will try to mount the `local docker daemon` and run another container internally to build the `HTML` assets it needs for publication.
 
-To avoid this causing problems during local development, we can set `techdocs.generator.runIn` in our `app-config.yaml` to `local` to instruct the `techdocs generator` that it should run `mkdocs` locally and not via `Docker`, which leaves our updated configuration element looking like this:
+To avoid this causing problems during local development, we can set `techdocs.generator.runIn` in our `app-config.yaml` to `local` to instruct the `techdocs generator` that it should run `mkdocs` locally and not via `Docker`, which leaves our updated configuration section looking like this:
 
 ```yaml
 techdocs:
