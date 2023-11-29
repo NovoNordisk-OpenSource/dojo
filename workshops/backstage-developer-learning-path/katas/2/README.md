@@ -255,5 +255,8 @@ techdocs:
 ***Note*** <br/>
 To better understand the inner workings on `TechDocs` generation, buillding and publishing we encourage participants to spend some personal time exploring the `TechDocs` architecture at the following [location](https://backstage.io/docs/features/techdocs/architecture)
 
+### 8. Registering TechDocs with our local Backstage instance
+TODO
+
 ## Want to help make our training material better?
  * Want to **log an issue** or **request a new kata**? Feel free to visit our [GitHub site](https://github.com/NovoNordisk-OpenSource/dojo/issues).
