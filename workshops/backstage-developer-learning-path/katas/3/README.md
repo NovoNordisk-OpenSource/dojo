@@ -23,10 +23,11 @@ Upon completion the participants will have gained a basic understanding of the f
 * `Parameterization` & `customization` our new `software template`.
 
 ### 1. Create a kata directory
-First we setup a directory for our exercise files. It's pretty straight forward:
+First we setup a directory for our exercise files. This involves copying the kata folder from the previous step to carry over our modifications, thankfully that is very straight forward:
 
 ```bash
-mkdir kata3
+cd ../
+cp kata2 kata3
 cd kata3
 ```
 

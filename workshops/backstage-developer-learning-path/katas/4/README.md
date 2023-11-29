@@ -24,10 +24,11 @@ Once completed the participants will have gained a basic understanding of the fo
 * Extending the software catalog with custom software entities.
 
 ### 1. Create a kata directory
-First we setup a directory for our exercise files. It's pretty straight forward:
+First we setup a directory for our exercise files. This involves copying the kata folder from the previous step to carry over our modifications, thankfully that is very straight forward:
 
 ```bash
-mkdir kata4
+cd ../
+cp kata3 kata4
 cd kata4
 ```
 
