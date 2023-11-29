@@ -88,10 +88,10 @@ docker run --name my_postgres -e POSTGRES_PASSWORD=supersecretpassword -e POSTGR
 ```
 
 ### 6. Restart Backstage
-Give the `postgres` database a minute to get ready while you terminate the current Backstage instance and allow the database services to come online inside our `my_postgres` container. Once the shell running the `postgres` workload prints messges indicating that the database is ready for external connections restart Backstage using the `start` command as follows:
+Give the `postgres` database a minute to get ready while you terminate the current Backstage instance and allow the database services to come online inside our `my_postgres` container. Once the shell running the `postgres` workload prints messges indicating that the database is ready for external connections restart Backstage using the `dev` command as follows:
 
 ```bash
-yarn start
+yarn dev
 ```
 
 ### 7. Verify configuration via Backstage Dashboard
