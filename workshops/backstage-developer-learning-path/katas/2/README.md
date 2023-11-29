@@ -36,6 +36,7 @@ cd kata2
 Next we have to ensure that the frontend plugin of `TechDocs` is activate by ensuring that our `packages/app` includes the `TechDocs plugin` assets. If the assets are not bundled in your current version of `Backstage`, the procedure involes interfacing with the `packages/app/src/App.tsx` asset and installing a `@backstage/plugin-techdocs` package via `yarn` by navigating to the `packages/app` directory and executing the following command:
 
 ```bash
+# From your Backstage root directory
 yarn add --cwd packages/app @backstage/plugin-techdocs
 ```
 
@@ -65,7 +66,8 @@ const AppRoutes = () => {
 With the frontend plugin activated we need to repeat the process for our `packages/backend` assets to ensure that it is correctly configured. If the assets are not bundled in your current version of Backstage, the procedure involes creating a new asset at the following location `packages/backend/src/plugins/techdocs.ts` and installing the `@backstage/plugin-techdocs` via `yarn` by navigating to the `packages/backend` directory and executing the following command:
 
 ```bash
-yarn add --cwd packages/backend @backstage/plugin-techdocs
+# From your Backstage root directory
+yarn add --cwd packages/backend @backstage/plugin-techdocs-backend
 ```
 
 Once the package has been installed, we need to create a new `techdocs.ts` asset and add the following logic:
