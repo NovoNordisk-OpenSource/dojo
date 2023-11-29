@@ -64,7 +64,7 @@ const AppRoutes = () => {
 With the frontend plugin activated we now need to repeat the process for our `packages/backend` assets. This procedure involes creating a new asset at the following location `packages/backend/src/plugins/techdocs.ts` and installing the `@backstage/plugin-techdocs` via `yarn` by navigating to the `packages/backend` directory and executing the following command:
 
 ```bash
-yarn add --cwd packages/app @backstage/plugin-techdocs
+yarn add --cwd packages/backend @backstage/plugin-techdocs
 ```
 
 Once the package has been installed, we need to create a new `techdocs.ts` asset and add the following logic:
