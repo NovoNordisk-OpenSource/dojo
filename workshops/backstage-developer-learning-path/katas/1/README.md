@@ -84,7 +84,7 @@ Make sure you have configured the required environment variables correctly to ta
 Once we have the new configuration in place for our persistant storage, we need to initializ a postgres container on our local machine to match the configuration:
 
 ```bash
-docker run --name my_postgres -e POSTGRES_PASSWORD=supersecretpassword -e POSTGRES_USER=admin -e POSTGRES_HOST=localhost -e POSTGRES_PORT=5432 -d postgres
+docker run --name my_postgres -e POSTGRES_PASSWORD=supersecretpassword -e POSTGRES_USER=admin -e POSTGRES_HOST=localhost -e POSTGRES_PORT=5432 -p 5432:5432 -d postgres
 ```
 
 ### 6. Restart Backstage
