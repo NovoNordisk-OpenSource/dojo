@@ -74,7 +74,7 @@ catalog:
 ```
 
 ***Note*** <br/>
-Keep in mind that paths in our configration file are relative to the `package` executing a given piece of code, thus in order for us to step out of the `backend package` and into the file system we need to use `../../` to go up two levels from the current execution path, which is typically `packages/backend/`. For more information about configration of the software catalog please go [here](https://backstage.io/docs/conf/)
+Keep in mind that paths in our configration file are relative to the `package` executing a given piece of code, thus in order for us to step out of the `backend package` and into the file system we need to use `../../` to go up two levels from the current execution path, which is typically `packages/backend/`. For more information about configuration of the software catalog please go [here](https://backstage.io/docs/conf/)
 
 ### 3. Working with entities
 In `Backstage`, `entities` represent different types of `metadata` about software teams, APIs, and documentation that can be discovered via the `software catalog`.
@@ -146,7 +146,7 @@ spec:
   /* Other component-specific properties */
 ```
 
-```yaml
+``` yaml
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
@@ -176,17 +176,98 @@ spec:
 
 The above schemas provide a baseline to define and manage `descriptors` for a given `capability`, which in turn makes it easier for teams to create, organize, and share information about their software assets within the `Backstage` platform. For more information on how to perform [substitition](https://backstage.io/docs/features/software-catalog/descriptor-format/#substitutions-in-the-descriptor-format) or [extend the model](https://backstage.io/docs/features/software-catalog/extending-the-model) a moment to browse the linked documentation.
 
-### 4. Working with metadata
-TODO: https://backstage.io/docs/features/software-catalog/well-known-annotations
-TODO: https://backstage.io/docs/features/software-catalog/well-known-relations
-TODO: https://backstage.io/docs/features/software-catalog/well-known-statuses
+### 4. Creating a new Component descriptor
+In `Backstage`, registering a `component` involves defining `entities` like `APIs` and `resources`. To put things into perspective we will compose an example of how you might register a component with two APIs and four resources:
 
-### 5. Creating a new Component definition
-TODO: https://backstage.io/docs/features/software-catalog/descriptor-format#overall-shape-of-an-entity
-TODO: https://backstage.io/docs/features/software-catalog/extending-the-model
+```yaml
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: your-component-name
+  description: Your component description
 
-### 6. Registering our new Component definition
-TODO: https://backstage.io/docs/features/software-catalog/software-catalog-api
+spec:
+  apis:
+    - kind: openapi
+      name: api-1
+      description: First API description
+      spec: |
+        openapi: 3.0.0
+        info:
+          title: API 1
+          version: 1.0.0
+        paths:
+          /resource1:
+            get:
+              summary: Get Resource 1
+              responses:
+                '200':
+                  description: OK
+          /resource2:
+            post:
+              summary: Create Resource 2
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+              responses:
+                '201':
+                  description: Created
+
+    - kind: grpc
+      name: api-2
+      description: Second gRPC API description
+      spec: |
+        name: GRPCService
+        package: your.package.name
+        services:
+          - name: Service1
+            methods:
+              - name: GetResource3
+                requestStream: false
+                responseStream: false
+                requestType: GetResource3Request
+                responseType: GetResource3Response
+
+  resources:
+    - kind: website
+      name: resource-1
+      description: First resource description
+      namespace: your-namespace
+      path: /resource-1
+      lifecycle: experimental
+
+    - kind: database
+      name: resource-2
+      description: Second resource description
+      namespace: your-namespace
+      connection: your-connection-string
+      schema: your-schema
+
+    - kind: storage
+      name: resource-3
+      description: Third resource description
+      namespace: your-namespace
+      config:
+        bucketName: your-bucket-name
+        region: your-region
+
+    - kind: function
+      name: resource-4
+      description: Fourth resource description
+      namespace: your-namespace
+      type: python
+      implementation: |
+        def function_name():
+          # Your function implementation here
+```
+
+### 5. Registering our new Component descriptor
+In order to add our new Component descriptor we can either navigate to the 'software catalog' GUI as described [here](https://backstage.io/docs/features/software-catalog/#getting-started) or the API as outlined [here](https://backstage.io/docs/features/software-catalog/software-catalog-api)
 
 ## Want to help make our training material better?
  * Want to **log an issue** or **request a new kata**? Feel free to visit our [GitHub site](https://github.com/NovoNordisk-OpenSource/dojo/issues).
