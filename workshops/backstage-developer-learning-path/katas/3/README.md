@@ -12,6 +12,7 @@ These instructions will help you prepare for the kata and ensure that your train
 * [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * [Docker Desktop](https://docs.docker.com/desktop/)
 * [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) (windows only)
+* [MKDocs](https://www.mkdocs.org/user-guide/installation/) (only used with local publisher settings)
 
 ## Exercise
 The objective of this exercise is to guide developers through the process of setting up the `Backstage TechDocs` plugin. It will built on the first `code kata` to extend our `Backstage` application and explore the different `TechDocs` configuration options such as specifying publishing behaviours.
