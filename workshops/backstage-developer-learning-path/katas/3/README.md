@@ -143,7 +143,10 @@ async function main() {
 ```
 
 ***Note*** <br/>
-You can find more information on how to configure the `TechDocs` plugins [here](https://backstage.io/docs/features/techdocs/configuration)
+You can find more information on how to configure the `TechDocs` plugins [here](https://backstage.io/docs/features/techdocs/configuration)<br />
+If you have problems with resolving the packages run `yarn install`.
+
+
 
 ### 4. Exploring TechDocs AddOns
 Enhancing our pages with additional embellishments adds a delightful touch to the developer experience. Imagine the convenience of having a link readily available, seamlessly directing you to a new issue page whenever specific text in your documentation is highlighted. Isn't that an intriguing concept? Let's delve into mastering this technique by harnessing the capabilities of `TechDocs Addons`!
