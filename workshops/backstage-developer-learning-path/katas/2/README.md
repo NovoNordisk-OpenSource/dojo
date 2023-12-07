@@ -50,7 +50,7 @@ In addition to `url` locations, you can use the `file` location type to bring in
 catalog:
   locations:
     - type: url
-      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/components/artist-look
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/components/artist-lookup-component.yaml
     - type: file
       target: ../../examples/all.yaml
 ```
@@ -64,7 +64,7 @@ catalog:
 
   locations:
     - type: url
-      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/components/artist-look
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/components/artist-lookup-component.yaml
       rules:
         - allow: [Group]
     - type: file
