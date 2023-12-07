@@ -12,6 +12,7 @@ These instructions will help you prepare for the kata and ensure that your train
 * [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * [Docker Desktop](https://docs.docker.com/desktop/)
 * [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) (windows only)
+* [MKDocs](https://www.mkdocs.org/user-guide/installation/) (only used with local publisher settings)
 
 ## Exercise
 The objective of this exercise is to guide developers through the process of setting up the `Backstage TechDocs` plugin. It will built on the first `code kata` to extend our `Backstage` application and explore the different `TechDocs` configuration options such as specifying publishing behaviours.
@@ -142,7 +143,7 @@ async function main() {
 ```
 
 ***Note*** <br/>
-You can find more information on how to configure the `TechDocs` plugins [here](https://backstage.io/docs/features/techdocs/configuration)
+You can find more information on how to configure the `TechDocs` plugins [here](https://backstage.io/docs/features/techdocs/configuration). If you have problems with resolving the packages run `yarn install`.
 
 ### 4. Exploring TechDocs AddOns
 Enhancing our pages with additional embellishments adds a delightful touch to the developer experience. Imagine the convenience of having a link readily available, seamlessly directing you to a new issue page whenever specific text in your documentation is highlighted. Isn't that an intriguing concept? Let's delve into mastering this technique by harnessing the capabilities of `TechDocs Addons`!
