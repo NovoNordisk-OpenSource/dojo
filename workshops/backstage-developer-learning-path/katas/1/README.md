@@ -80,21 +80,35 @@ backend:
 ***Note*** <br/>
 Make sure you have configured the required environment variables correctly to target your local `postgres` installation.
 
-### 5. Initialize a local postgres container
+### 5. Configure Azure DevOps integration
+[TEXT]
+
+```yaml
+integrations:
+  azure:
+    - host: dev.azure.com
+      credentials:
+        - personalAccessToken: ${PERSONAL_ACCESS_TOKEN}
+```
+
+***Note*** <br/>
+To better understand how to create a personal access token for your Azure DevOps organization visit this [link](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows)
+
+### 6. Initialize a local postgres container
 Once we have the new configuration in place for our persistant storage, we need to initializ a postgres container on our local machine to match the configuration:
 
 ```bash
 docker run --name my_postgres -e POSTGRES_PASSWORD=supersecretpassword -e POSTGRES_USER=admin -e POSTGRES_HOST=localhost -e POSTGRES_PORT=5432 -p 5432:5432 -d postgres
 ```
 
-### 6. Restart Backstage
+### 7. Restart Backstage
 Give the `postgres` database a minute to get ready while you terminate the current Backstage instance and allow the database services to come online inside our `my_postgres` container. Once the shell running the `postgres` workload prints messges indicating that the database is ready for external connections restart Backstage using the `dev` command as follows:
 
 ```bash
 yarn dev
 ```
 
-### 7. Verify configuration via Backstage Dashboard
+### 8. Verify configuration via Backstage Dashboard
 Once the reconfigured Backstage process is up and running again, open your web browser and go to http://localhost:3000 to verify that your local Backstage instance is servicing connections. This will take you to the Backstage dashboard displaying various cards such as Catalog, Explore, Create, and more.
 
 Check the various features are working and that your developer tools (F11) does not report `CSP` or `CORS` errors.
