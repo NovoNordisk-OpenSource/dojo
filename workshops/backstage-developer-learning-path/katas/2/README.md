@@ -27,9 +27,9 @@ Once completed the participants will have gained a basic understanding of the fo
 First we setup a directory for our exercise files. This involves copying the kata folder from the previous step to carry over our modifications, thankfully that is very straight forward:
 
 ```bash
-cd ../
 cp kata1 kata2
 cd kata2
+cd your-backstage-app-name
 ```
 
 ### 2. Configuring the software catalog

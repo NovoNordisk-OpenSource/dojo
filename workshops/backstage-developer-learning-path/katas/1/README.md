@@ -81,7 +81,7 @@ backend:
 Make sure you have configured the required environment variables correctly to target your local `postgres` installation.
 
 ### 5. Configure Azure DevOps integration
-[TEXT]
+The `app.config` file serves as the blueprint for orchestrating integrations within `Backstage`. To configure `Azure DevOps` integration, modify the designated section for integrations within the `app.config` file. Here, specify the necessary parameters such as the Azure DevOps organization's URL and authentication details like `personal access tokens` securely. This enables `Backstage` to establish a secure connection and leverage `Azure DevOps` APIs:
 
 ```yaml
 integrations:

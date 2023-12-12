@@ -26,13 +26,13 @@ Upon completion the participants will have gained a basic understanding of the f
 First we setup a directory for our exercise files. This involves copying the kata folder from the previous step to carry over our modifications, thankfully that is very straight forward:
 
 ```bash
-cd ../
 cp kata3 kata4
 cd kata4
+cd your-backstage-app-name
 ```
 
-### 2. Initialize git repository
-TODO
+### 2. Initialize Git repository
+The `git init` command serves as the foundational step in initializing a new `Git` repository within a directory. It initializes an empty `Git` repository, creating the necessary data structures and configuration files, including the `.git` directory, which houses the repository's metadata and versioning information. This command marks the starting point for version control, enabling tracking of changes and facilitating collaboration:
 
 ```bash
 git init
@@ -46,6 +46,7 @@ npx create-react-app hello-react
 cd hello-react
 yarn start
 ```
+
 Once we have verified that the scaffoleded code works as intended, meaning `yarn start` succesfully launches the application, we can start building our `software template` around it to turn it into a reusable component in `Backstage`. To achieve this, you'll need to create a `template.yaml` file containing a `definition` for our `hello-react` template:
 
 ```bash
@@ -218,13 +219,14 @@ spec:
 ```
 
 ### 6. Publish software template
-TODO
+Publishing a `software template` with `git push` involves several steps to ensure its availability and usability by others. Once the `template` is crafted or modified, committing the changes locally using `Git` is the initial step. Then, upon ensuring that the remote repository is correctly set as the destination, employing `git push` pushes the committed changes to the remote repository. With proper permissions and access, this action enables the template to become accessible to collaborators or users who can utilize it for their own `Backstage` projects. This publication process via `git push` streamlines the distribution and availability of the `software template`, allowing others to easily integrate it into their development workflows and contribute enhancements or modifications as needed.
 
 ```bash
 git add .
-git commit -m "feat:template"
-git remote add origin git@github.com:username/hello-react-template
-git push -u origin master
+git commit -m "feat:template"  
+git branch -M main
+git remote add origin https://github.com/username/hello-react.git
+git push -u origin main
 ```
 
 ### 7. Registering software templates via app-config.yaml
