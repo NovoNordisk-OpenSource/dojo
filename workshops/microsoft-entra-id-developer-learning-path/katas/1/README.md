@@ -132,7 +132,7 @@ az ad app create --display-name $display_name
 app_id=$(az ad app list --display-name "$display_name" --query '[].{AppId: appId}' --output tsv)
 
 # Update the settings of our new app registration based on our manifest.json
-az ad app update --id $app_id  --app-roles @manifest.json --optional-claims @manifest.json --required-resource-accesses @manifest.json
+az ad app update --id $app_id  --app-roles ./manifest.json --optional-claims ./manifest.json --required-resource-accesses ./manifest.json
 ```
 
 ***Note*** <br/>
