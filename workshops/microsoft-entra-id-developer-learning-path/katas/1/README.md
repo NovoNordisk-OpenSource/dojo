@@ -12,10 +12,10 @@ These instructions will help you prepare for the kata and ensure that your train
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Exercise
-This instructional exercise is meticulously designed to serve as a comprehensive guide, taking you step-by-step through the landscape of [Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/). Its purpose is not solely limited to getting you started on the [IAM](https://www.microsoft.com/en-gb/security/business/security-101/what-is-identity-access-management-iam) training; it also aims to provide a detailed walkthrough that acquaints you with the nuanced functionalities of concepts to ensure we have a broad shared understanding of the taxonomy associated with this particulare knowledge domain.
+This instructional exercise is meticulously designed to serve as a comprehensive guide, taking you step-by-step through the landscape of [Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/) application registrations. Its purpose is not solely limited to getting you started on the [IAM](https://www.microsoft.com/en-gb/security/business/security-101/what-is-identity-access-management-iam) training; it also aims to provide a detailed walkthrough that acquaints you with the nuanced functionalities of application manifests to ensure we have a broad shared understanding of the taxonomy associated with this particulare subject.
 
 ### 1. Login to Azure portal
-First we need to login to Azure to ensure we have permissions to interact with our [Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/) tenant:
+To get started we need to login to Azure to ensure we have permissions to interact with our [Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/) tenant:
 
 ```bash
 az login -u johndoe@contoso.com -p VerySecret
@@ -35,7 +35,7 @@ cd kata1
 ### 3. Create application manifest
 Next we can proceed to creating a `manifest.json` file in our `kata1` directory that contains the desired state of the application registration we want to provisiong with our Microsoft Entra ID tenant:
 
-```bash
+```json
 {
   "id": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd", # Unique identifier for the app in the directory. This ID is not used to identify the app in any protocol transaction. It's used for referencing the object in directory queries.
   "acceptMappedClaims": false, # Do not set acceptMappedClaims property to true for multi-tenant apps. This can allow malicious actors to create claims-mapping policies for your app.
@@ -113,12 +113,12 @@ Next we can proceed to creating a `manifest.json` file in our `kata1` directory 
 ```
 
 ***Note*** <br/>
-Its worth noting that due to limitations in the `AZ CLI` we are only allowed to infer certain values from our application manifest file, however for the sake of completness we have opted to present a more verbose version to ensure that people understand all the key settings that are required for them to succesfully setup an application registrations that is compatible with our Heimdall platform.
+Its worth noting that due to limitations in the `AZ CLI` we are only allowed to infer certain values from our application manifest file, however for the sake of completness we have opted to present a more verbose version to ensure that people understand all the key settings that are required for them to succesfully setup an application registration that is compatible with our Heimdall platform.
 
 Furthermore the application manifest schema is quiet extensive and our working example only covers the essentials, thus it is worth taking time to [investigate the various configuration options at our disposal](https://learn.microsoft.com/en-us/entra/identity-platform/reference-app-manifest).
 
 ### 4. Create application registration
-[TODO]
+With the manifest in hand we can now use the `AZ CLI` to create a new application registration:
 
 ```bash
 # Replace <display-name> with the display name of your Azure App Registration
@@ -137,7 +137,7 @@ az ad app update --id $app_id  --app-roles ./manifest.json --optional-claims ./m
 ***Note*** <br/>
 We cannot directly create an application registration from a `manifest.json` file using the `az ad app create` command. The `az ad app create` command creates a new Azure AD application registration with the specified parameters, but it doesn't accept a manifest file as input.
 
-To create an application registration with specific configurations defined in a `manifest.json` file, you would typically create the application first using `az ad app create`, and then update its properties using the `az ad app update` command as shown above. Alternatively you can create the application registration by hand in the Azure portal and copy in the full `manifest.json`.
+To create an application registration with specific configurations defined in a `manifest.json` file, you would typically create the application first using `az ad app create`, and then update its properties using the `az ad app update` command as shown above. Alternatively you can create the application registration by hand via the Azure portal and paste in the full `manifest.json`.
 
 ## Want to help make our training material better?
  * Want to **log an issue** or **request a new kata**? Feel free to visit our [GitHub site](https://github.com/NovoNordisk-OpenSource/dojo/issues).
