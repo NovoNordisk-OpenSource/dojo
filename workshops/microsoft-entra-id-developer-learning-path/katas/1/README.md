@@ -7,7 +7,6 @@ This training exercise is a **beginner-level** course on [Microsoft Entra ID](ht
 These instructions will help you prepare for the kata and ensure that your training machine has the tools installed you will need to complete the assignment(s). If you find yourself in a situation where one or more tools might not be available for your training environment please reach out to your instructor for assistance on how to proceed, post an [issue in our repository](https://github.com/NovoNordisk-OpenSource/dojo/issues) or fix it yourself and update the kata via a [pull request](https://github.com/NovoNordisk-OpenSource/dojo/pulls).
 
 ### Prerequisites
-* [.NET8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 * [Azure](https://portal.azure.com/)
 * [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli#install)
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
