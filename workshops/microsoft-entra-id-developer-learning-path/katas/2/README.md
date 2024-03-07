@@ -54,7 +54,7 @@ Add a function to your project by using the following command, where the `--name
 func new --name CustomClaimsProvider --template "HTTP trigger" --authlevel "function"
 ```
 
-### 6. Create a HttpTrigger function
+### 6. Add claims injection logic to HttpTrigger function
 Add logic to inject our custom claim(s) in our newly created function trigger:
 
 ```csharp
@@ -186,14 +186,14 @@ After you've successfully created your function app in Azure, you're now ready t
 func azure functionapp publish <APP_NAME>
 ```
 
-### 9. Invoke the function on Azure
+### 10. Invoke the function on Azure
 After you've successfully created your function app in Azure, you're now ready to deploy your local functions project by using the `func azure functionapp publish` command:
 
 ```bash
 func azure functionapp logstream <APP_NAME>
 ```
 
-### 10. Clean up resources
+### 11. Clean up resources
  Once your done with this kata use the following command to delete the resource group and all its contained resources to avoid incurring further costs.:
 
 ```bash
